@@ -1,11 +1,10 @@
 machine:
   timezone: America/Montreal
-  environment:
-    PATH: "$PATH:$HOME/vendor/bin"
   php:
     version: 7.0.7
+  post:
+    - ln -s $CIRCLE_TEST_REPORTS ${HOME}/reports
 
 test:
   override:
-    - mkdir -p $CIRCLE_TEST_REPORTS/phpspec
-    - vendor/bin/phpspec run --no-interaction --format=junit > $CIRCLE_TEST_REPORTS/phpspec/junit.xml
+    - composer tests

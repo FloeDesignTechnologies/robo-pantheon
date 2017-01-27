@@ -20,5 +20,10 @@
       "Floe\\Robo\\Pantheon\\": ["src/"],
       "spec\\Floe\\Robo\\Pantheon\\":["spec/"]
     }
+  },
+  "scripts": {
+    "tests": [
+      "mkdir -p reports/phpspec && phpspec run --no-interaction --format=junit > reports/phpspec/junit.xml"
+    ]
   }
 }
