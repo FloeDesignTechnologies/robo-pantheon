@@ -8,4 +8,4 @@ machine:
 test:
   override:
     - mkdir -p $CIRCLE_TEST_REPORTS/phpspec
-    - phpspec run --no-interaction --format=junit > $CIRCLE_TEST_REPORTS/phpspec/junit.xml
+    - vendor/bin/phpspec run --no-interaction --format=junit > $CIRCLE_TEST_REPORTS/phpspec/junit.xml

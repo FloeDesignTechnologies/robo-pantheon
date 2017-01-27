@@ -1,5 +1,7 @@
 # Robo Panthon Extension
 
+[![CircleCI](https://circleci.com/gh/FloeDesignTechnologies/robo-pantheon.svg?style=svg)](https://circleci.com/gh/FloeDesignTechnologies/robo-pantheon)
+
 Robo tasks and helpers for Pantheon projects.
 
 ## Installation
