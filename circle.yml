@@ -1,0 +1,11 @@
+machine:
+  timezone: America/Montreal
+  environment:
+    PATH: "$PATH:$HOME/vendor/bin"
+  php:
+    version: 7.0.7
+
+test:
+  override:
+    - mkdir -p $CIRCLE_TEST_REPORTS/phpspec
+    - phpspec run --no-interaction --format=junit > $CIRCLE_TEST_REPORTS/phpspec/junit.xml
