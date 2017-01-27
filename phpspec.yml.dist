@@ -1,0 +1,5 @@
+suites:
+  floe_cli_suite:
+    namespace: Floe\Robo\Pantheon
+    psr4_prefix: Floe\Robo\Pantheon
+bootstrap: spec/bootstrap.php

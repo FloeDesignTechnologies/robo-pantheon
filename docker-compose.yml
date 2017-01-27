@@ -1,0 +1,27 @@
+version: '2'
+services:
+
+  # Container to run cli applications (composer, etc.)
+  composer:
+    container_name: robo-pantheon-composer
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        USER_UID: ${USER_UID}
+        USER: ${USER}
+    volumes:
+      - .:/app:rw
+      # Share the local user's composer cache as a Docker volume
+      - ~/.composer/cache:/composer/cache:rw
+      # Share the local user's .ssh folder (so Git has access to SSH keys)
+      - ~/.ssh:/home/${USER}/.ssh:ro
+      - ~/.ssh/known_hosts:/home/${USER}/.ssh/known_hosts:rw
+    environment:
+      - PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/app/vendor/bin
+
+  # Container to run a shell
+  shell:
+    extends:
+      service: composer
+    entrypoint: bash

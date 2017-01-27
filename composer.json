@@ -1,0 +1,24 @@
+{
+  "name": "floe/robo-pantheon",
+  "description": "Robo tasks and helpers for Pantheon projects",
+  "type": "robo-tasks",
+  "require": {
+    "consolidation/robo": "^1.0"
+  },
+  "require-dev": {
+    "phpspec/phpspec": "^3.2"
+  },
+  "license": "AGPL-3.0",
+  "authors": [
+    {
+      "name": "Pierre Buyle",
+      "email": "buyle@floe.ca"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Floe\\Robo\\Pantheon\\": ["src/"],
+      "spec\\Floe\\Robo\\Pantheon\\":["spec/"]
+    }
+  }
+}
