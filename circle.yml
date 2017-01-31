@@ -2,9 +2,9 @@ machine:
   timezone: America/Montreal
   php:
     version: 7.0.7
-  post:
-    - ln -s $CIRCLE_TEST_REPORTS ${HOME}/reports
 
 test:
   override:
     - composer tests
+  post:
+    - cp -p -r reports/* $CIRCLE_TEST_REPORTS
