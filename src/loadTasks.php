@@ -16,8 +16,8 @@ trait loadTasks {
    *
    * @return Terminus
    */
-  protected function taskTerminus($command) {
-    return new $this->task(Terminus::class);
+  protected function taskTerminus($command, $terminusPath = 'terminus') {
+    return $this->task(Terminus::class, $command, $terminusPath);
   }
 
   /**
