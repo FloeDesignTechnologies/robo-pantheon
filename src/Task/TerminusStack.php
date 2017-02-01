@@ -37,7 +37,10 @@ class TerminusStack extends CommandStack {
     static $commandMaps;
     if (!isset($commandMaps)) {
       /** @var Result $result */
+      $printed = $this->isPrinted;
+      $this->printed(false);
       $result = $this->executeCommand("{$this->executable} list --raw");
+      $this->printed($printed);
       $knownCommands = array_map(function ($command) {
         return explode(' ', $command, 2)[0];
       }, explode(PHP_EOL, $result->getOutputData()));
